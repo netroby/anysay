@@ -37,6 +37,12 @@ func (fc *FrontController) AboutCtr(c *gin.Context) {
 func (fc *FrontController) PingCtr(c *gin.Context) {
 	c.String(http.StatusOK, "pong")
 }
+func (fc *FrontController) ListSayCtr(c *gin.Context) {
+	c.JSON(http.StatusOK, "pong")
+}
+func (fc *FrontController) AddSayCtr(c *gin.Context) {
+	c.String(http.StatusOK, "pong")
+}
 func (fc *FrontController) HomeCtr(c *gin.Context) {
 	page, err := strconv.Atoi(c.DefaultQuery("page", "1"))
 	if err != nil {

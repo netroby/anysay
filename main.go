@@ -23,6 +23,8 @@ func main() {
 	r.Use(sessions.Sessions("mysession", store))
 	fc := new(FrontController)
 	r.GET("/", fc.HomeCtr)
+	r.GET("/api/listSay", fc.ListSayCtr)
+	r.POST("/api/addSay", fc.AddSayCtr)
 	r.GET("/about", fc.AboutCtr)
 	r.GET("/view/:id", fc.ViewCtr)
 	r.GET("/view.php", fc.ViewAltCtr)

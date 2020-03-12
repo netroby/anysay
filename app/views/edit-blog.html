@@ -1,0 +1,29 @@
+{% func EditBlog(out map[string]string) %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>由 gosense 驱动!</title>
+    
+    {%=  GA() %}
+    {%= Editor(out) %}
+</head>
+<body>
+<div class="container">
+<form action="/admin/save-blog-edit" method="post" enctype="multipart/form-data" class="form-horizontal" role="form">
+    <div class="form-group"><label>标题:</label><input name="title" class="form-control" value="{%s out["title"] %}" />
+        [<a href="/admin/deleteblog/{%s out["aid"] %}">删除</a>]
+    </div>
+    <div class="form-group">
+        <label>内容:</label>
+        <textarea name="content" class="form-control" style="height:500px">{%s out["content"]%}</textarea></div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <input type="hidden" name="aid" value="{%s out["aid"] %}">
+            <button type="submit">保存</button>
+        </div>
+    </div>
+</form>
+</div>
+</body>
+</html>
+{% endfunc %}

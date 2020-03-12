@@ -1,0 +1,29 @@
+{% func Message(out map[string]string) %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{%s out["message"] %}</title>
+    {%=  GA() %}
+</head>
+<body>
+<div class="back-to-home"><a href="/">首页</a></div>
+<div class="clearfix"></div>
+<div class="container">
+    <div class="content">
+        <div class="txtcenter">
+            <p>{%s out["message"] %}</p>
+            <p>{% if out["url"] != "" %}
+                <a href="{%s out["url"] %}">好的</a>
+                {% endif %}
+            </p>
+        </div>
+    </div>
+</div>
+
+{%= CommonFoot() %}
+
+</body>
+</html>
+{% endfunc %}

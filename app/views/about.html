@@ -1,0 +1,50 @@
+{% func About(out map[string]string) %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{%s out["siteName"] %} - 由 gosense 驱动!</title>
+    <meta name="description" content="{%s out["siteDescription"] %}"/>
+    {%= GA() %}
+</head>
+<body>
+<header class="navbar navbar-static-top navbar-inverse" id="top" role="banner">
+    <div class="container">
+        <div class="">
+            <a href="/" class="navbar-brand">{%s out["siteName"] %}</a>
+        </div>
+        <nav class="collapse navbar-collapse " role="navigation">
+            <ul class="nav navbar-nav">
+                <li><a href="/">首页</a></li>
+                <li class="active"><a href="/about">关于</a></li>
+            </ul>
+
+            {%= CommonNav(out) %}
+        </nav>
+    </div>
+</header>
+<div class="container">
+    <div class="content h900">
+        <h2>关于我</h2>
+        <p>写代码, 始于 2002.</p>
+        <p>Linux/FreeBSD 爱好者，开源爱好者.现在在写 PHP,Go lang, C/CPP. Know a bit about Erlang, JAVA,
+            Scala,Haskell,Ocaml,Python,Ruby,Lua，Rust Lang.</p>
+        <h2>联系方式</h2>
+        <p>netroby#netroby[dot]com</p>
+        <p><a href="//t.me/netroby">t.me/netroby</a></p>
+        <p>关注我: <a href="http://twitter.com/netroby">@twitter</a> <a href="https://github.com/netroby">@github</a></p>
+        <p>Matrix聊天</p>
+        <p> <a href="https://matrix.to/#/+yskm:matrix.org"><img src="https://yskm.dev/matrix.png"  alt="https://matrix.to/#/+yskm:matrix.org"/></a></p>      
+        <p><a href="https://matrix.to/#/+yskm:matrix.org">https://matrix.to/#/+yskm:matrix.org</a></p>
+        <h2>捐助支持</h2>
+        <p>支付宝二维码扫描捐赠:<br/><img src="/assets/images/alipayme.jpg"
+                                                           style="width:72px;height:72px" alt="支付宝二维码扫描捐赠">
+        </p>
+        <p>捐赠Bitcoin:<code>136MYemy5QmmBPLBLr1GHZfkES7CsoG4Qh</code></p>
+    </div>
+</div>
+{%= CommonFoot() %}
+</body>
+</html>
+{% endfunc %}

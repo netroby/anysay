@@ -1,0 +1,8 @@
+.DS_Store
+/anysay
+/.idea
+*.iml
+/go.sum
+*.go
+*.sqlite
+*.html.go

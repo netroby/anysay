@@ -1,0 +1,29 @@
+{% func AdminFiles(out map[string]string, objects []string) %}
+
+<html>
+<head>
+    <title>文件上传</title>
+</head>
+<body>
+<form enctype="multipart/form-data" action="/admin/fileupload" method="post">
+    <input type="file" name="uploadfile" />
+    <input type="submit" value="上传" />
+</form>
+<style type="text/css">
+    .list-files a {
+        display:inline-block;
+    }
+</style>
+<div class="list-files">
+    {% for _, o  := range objects %}
+    <div style="margin:10px;width:150px;float:left">
+    <a href="{%s out["cdnurl"] %}{%s o %}"><img src="{%s out["cdnurl"] %}{%s o %}?act=resize&x=120"></a>
+        <br />
+        <input type="text" value="{%s out["cdnurl"] %}{%s o %}" style="width:120px"/>
+        </div>
+    {% endfor %}
+</div>
+</body>
+</html>
+
+{% endfunc %}

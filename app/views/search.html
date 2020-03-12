@@ -1,0 +1,56 @@
+{% func Search(out map[string]string) %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{%s out["siteName"] %} - 由 gosense 驱动!</title>
+    <meta name="description" content="{%s out["siteDescription"] %}" />
+    {%=  GA() %}
+    <style>
+        .paginav {
+            width:100%;
+            height:24px;
+            margin:20px 40px;
+            display:block;
+            clear:both;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<header class="navbar navbar-static-top navbar-inverse" id="top" role="banner">
+    <div class="container">
+        <div class="">
+            <a href="/" class="navbar-brand">{%s out["siteName"] %}</a>
+        </div>
+        <nav class="collapse navbar-collapse " role="navigation">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">首页</a></li>
+                <li><a href="/about">关于</a></li>
+            </ul>
+
+            {%= CommonNav(out) %}
+        </nav>
+    </div>
+</header>
+<div class="container">
+    <div class="content">
+        <ul class="blog-list">
+           {%s out["blogList"] %}
+        </ul>
+        <div class="txtcenter">
+
+            <div class="paginav">
+                <div style="float:left;width:150px;text-align:center"><a href="/search?keyword={%s out["keyword"] %}&page={%s out["nextPage"] %}">上一页</a></div>
+                <div style="float:left;width:150px;text-align:center"><a href="/search?keyword={%s out["keyword"] %}&page={%s out["prevPage"] %}">下一页</a></div>
+                </div>
+
+        </div>
+     </div>
+</div>
+
+{%= CommonFoot() %}
+</body>
+</html>
+{% endfunc %}

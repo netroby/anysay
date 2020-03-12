@@ -1,0 +1,43 @@
+{% import "github.com/netroby/anysay/app/views" %}
+{% func AdminLogin(out map[string]string) %}
+
+<!DOCTYPE html>
+        <html>
+<head>
+    <title>登录</title>
+    
+    {%=  views.GA() %}
+    <style>
+        .container {
+            width:50%;
+            height:50%;
+            margin:10% auto;
+            text-align:center
+        }
+        .container td {
+            padding:10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<form action="/admin/login-process" method="post" enctype="multipart/form-data">
+    <table>
+        <tr>
+            <td>账号: </td>
+            <td><input name="username"></td>
+        </tr>
+        <tr>
+            <td>密码: </td>
+            <td><input type="password" name="password"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="登录"></td>
+        </tr>
+    </table>
+</form>
+</div>
+</body>
+</html>
+{% endfunc %}

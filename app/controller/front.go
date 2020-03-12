@@ -112,6 +112,19 @@ func (fc *FrontController) HomeCtr(c *gin.Context) {
 		"nextPage":        fmt.Sprintf("%d", next_page),
 	}))
 	return
+
+
+	/*
+	{"data":[
+	{"key":89,
+	"disabled":false,
+	"href":"https://ant.design",
+	"avatar":"https://gw.alipayobjects.com/zos/rmsportal/udxAbMEhpwthVVcjLXik.png",
+	"name":"TradeCode 89","owner":"曲丽丽","desc":"这是一段描述","callNo":105,"status":3,
+	"updatedAt":"2020-03-12T06:31:44.004Z","createdAt":"2020-03-12T06:31:44.004Z","progress":22
+	},
+	],"total":100,"success":true,"pageSize":"10","current":1}
+	 */
 }
 
 func (fc *FrontController) SearchCtr(c *gin.Context) {

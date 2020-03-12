@@ -48,17 +48,9 @@ func main() {
 		admin.POST("/fileupload", ac.FileUpload)
 	}
 
-	a := new(Api)
-	api := r.Group("/api")
-	{
-		api.GET("/", a.Index)
-		api.GET("view/:id", a.View)
-	}
-	rss := new(RSS)
-	r.GET("/rss.php", rss.Alter)
-	r.GET("/rss", rss.Out)
-	log.Info().Msg("Server listen on 127.0.0.1:8002")
-	err := r.Run("127.0.0.1:8002")
+
+	log.Info().Msg("Server listen on 127.0.0.1:8073")
+	err := r.Run("127.0.0.1:8073")
 	if err != nil {
 		LogError(err)
 	}
